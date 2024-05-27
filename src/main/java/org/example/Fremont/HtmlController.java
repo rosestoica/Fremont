@@ -18,7 +18,7 @@ public class HtmlController {
 	@Autowired
 	private AuthenticationService authenticationService;
 
-	@GetMapping("/p2")
+	@GetMapping("p2")
 	public String showLoginPage(Model model) {
 		model.addAttribute("error", false);
 		return "p2";
