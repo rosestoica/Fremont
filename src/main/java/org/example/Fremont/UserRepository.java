@@ -71,12 +71,9 @@ public class UserRepository {
 	private PasswordEncoder passwordEncoder;
 
 	public User findByUsername(String username) {
-		//String sql = "SELECT * FROM User WHERE username = ?";
-		//return jdbcTemplate.queryForObject(sql, new Object[]{username}, new UserRowMapper());
-		//if(username.equals("user1"))
-			return new User();
-		//else
-			//return null;
+		String sql = "SELECT * FROM User WHERE username = ?";
+		return jdbcTemplate.queryForObject(sql, new Object[]{username}, new UserRowMapper());
+
 	}
 
 	public void save(User user) {

@@ -22,7 +22,7 @@ public class SecurityConfig {
 		http
 				.csrf().disable()
 				.authorizeHttpRequests((requests) -> requests
-						.requestMatchers("/works", "/p0", "/p1", "/p2", "/p4", "/p5", "/p6", "/p7").permitAll()  // Allow public access to /works and /html
+						.requestMatchers("/works","/login", "/p0", "/p1", "/p2", "/p4", "/p5", "/p6", "/p7").permitAll()  // Allow public access to /works and /html
 						.anyRequest().authenticated()  // Require authentication for other requests
 				)
 //.formLogin().disable();  // Disable form login (optional, if you don't want a form login)

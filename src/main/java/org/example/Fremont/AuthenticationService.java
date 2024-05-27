@@ -35,7 +35,7 @@ public class AuthenticationService {
 
 	public boolean authenticate(String username, String password) {
 		User user = userRepository.findByUsername(username);
-		if (user != null ) { //&& passwordEncoder.matches(password, user.getPassword())
+		if (user != null && passwordEncoder.matches(password, user.getPassword()) ) {
 			return true;
 		}
 		return false;
