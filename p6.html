@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bike Rental Hub</title>
+    <style>
+        /* Stilurile existente */
+    </style>
+</head>
+<body>
+    <a href="#" class="arrow-link">&lt;</a>
+    <h1>Owner <div class="photo"></div></h1>
+    <div class="container">
+        <div class="form-container">
+            <h3 align="center">New Bike?</h3>
+            <form action="" method="post">
+                <div class="choose-photo-container">
+                    <a href="#" class="choose-photo-button">
+                        <span class="arrow-up">&#8686;</span>
+                        Upload a picture
+                    </a>
+                </div>
+                <div class="form-group">
+                    <label for="mark">Enter the mark</label>
+                    <input type="text" id="mark" name="mark">
+                </div>
+                <div class="form-group">
+                    <label for="yp">Enter the year of production</label>
+                    <input type="text" id="yp" name="yp">
+                </div>
+                <div class="form-group">
+                    <label for="bp">Base price</label>
+                    <input type="text" id="bp" name="bp">
+                </div>
+                <div class="extra-services">
+                    <h3>Extra services</h3>
+                    <div>
+                        <input type="checkbox" name="opt" value="speed"> Gear shifter<br>
+                        <input type="checkbox" name="opt" value="gps"> GPS<br>
+                        <input type="checkbox" name="opt" value="mirror"> Mirror<br>
+                        <input type="checkbox" name="opt" value="pump"> Air pump<br>
+                        <input type="checkbox" name="opt" value="bottle"> Bottle support<br>
+                        <input type="checkbox" name="opt" value="horn"> Horn<br>
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="Post" name="p" class="button">
+            </form>
+        </div>
+        <div class="form-container">
+            <h3 align="center">Your activity</h3>
+            <h3>Your bikes</h3>
+            <?php
+            // Codul PHP pentru afișarea bicicletelor
+            $servername = "localhost";
+            $username = "utilizator";
+            $password = "parola";
+            $dbname = "nume_baza_de_date";
+
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            if ($conn->connect_error) {
+                die("Conexiune esuata: " . $conn->connect_error);
+            }
+
+            $sql_bikes = "SELECT * FROM bikes";
+            $result_bikes = $conn->query($sql_bikes);
+
+            if ($result_bikes->num_rows > 0) {
+                while($row = $result_bikes->fetch_assoc()) {
+                    echo "<div>";
+                    echo "<img src='" . $row['poza'] . "' alt='Bike Image'>";
+                    echo "<p>ID: " . $row['id'] . "</p>";
+                    echo "<p>Marca: " . $row['marca'] . "</p>";
+                    echo "<p>Extra services: " . $row['servicii_extra'] . "</p>";
+                    echo "</div>";
+                }
+            } else {
+                echo "No bikes available.";
+            }
+            ?>
+            <h3>Your clients</h3>
+            <?php
+            // Codul PHP pentru afișarea clienților
+            $sql_clients = "SELECT * FROM clients";
+            $result_clients = $conn->query($sql_clients);
+
+            if ($result_clients->num_rows > 0) {
+                while($row = $result_clients->fetch_assoc()) {
+                    echo "<div>";
+                    echo "<img src='" . $row['poza'] . "' alt='Client Image'>";
+                    echo "<p>Nume: " . $row['nume'] . "</p>";
+                    echo "<p>Prenume: " . $row['prenume'] . "</p>";
+                    echo "<p>Oras: " . $row['oras'] . "</p>";
+                    echo "<p>ID Bicicleta: " . $row['id_bicicleta'] . "</p>";
+                    echo "</div>";
+                }
+            } else {
+                echo "No clients available.";
+            }
+
+            $conn->close();
+            ?>
+        </div>
+    </div>
+</body>
+</html>
