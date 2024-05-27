@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bike Rental Hub</title>
+    <style>
+        body {
+            background: radial-gradient(circle, #05CDC4, #2D6685);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            position: relative; /* Adăugăm poziționarea relativă pentru a poziționa elementul copil absolut */
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .form-container {
+            width: 45%;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid black;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .button {
+            border: 2px solid black;
+            background-color: blue;
+            font-size: 20px;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        .choose-photo-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }.choose-photo-button {
+             width: 200px; /* Dimensiune mai mare pentru a se potrivi cu noul stil */
+             height: 200px; /* Dimensiune mai mare pentru a se potrivi cu noul stil */
+             border-radius: 50%; /* Păstrăm forma circulară */
+             background-color: #4682B4; /* Culoare albastru metalic */
+             border: none;
+             color: white;
+             font-size: 24px; /* Dimensiunea textului */
+             cursor: pointer;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             text-decoration: none;
+             text-align: center;
+             position: relative; /* Adăugăm poziționarea relativă pentru a poziționa săgeata absolut */
+         }
+
+        .arrow-up {
+            position: absolute;
+            top: 10px; /* Ajustăm poziția săgeții în funcție de preferințe */
+            left: 50%; /* O plasăm pe axa orizontală */
+            transform: translateX(-50%); /* O centram pe axa orizontală */
+        }
+
+        .choose-photo-button:hover {
+            background-color: #357ABD; /* Schimbăm culoarea la survol */
+        }
+        .extra-services {
+            margin-top: 20px;
+        }
+        .extra-services input {
+            margin-right: 5px;
+        }
+        .arrow-link {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            margin-top: 20px; /* Pentru a centra vertical elementul */
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+        }
+        .photo {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(200, 200, 20, 0.1);
+            position: absolute;
+            top: 0;
+            right: 20px;
+            margin-top: 20px; /* Pentru a centra vertical elementul */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid white;
+        }
+        .choose-photo-button {
+            font-size: 36px; /* sau orice dimensiune dorită */
+        }
+    </style>
+</head>
+<body>
+<a href="#" class="arrow-link">&lt;</a> <!-- Adăugăm săgeata către stânga aici -->
+<h1>Owner <div class="photo"></div></h1> <!-- Adăugăm div-ul pentru fotografiă aici -->
+<div class="container">
+    <div class="form-container">
+        <h3 align="center">New Bike?</h3>
+        <form action="" method="post">
+            <div class="choose-photo-container">
+                <a href="#" class="choose-photo-button">
+                    <span class="arrow-up">&#8686;</span>
+                    Upload a picture
+                </a>                </div>
+            <div class="form-group">
+                <label for="mark">Enter the mark</label>
+                <input type="text" id="mark" name="mark">
+            </div>
+            <div class="form-group">
+                <label for="yp">Enter the year of production</label>
+                <input type="text" id="yp" name="yp">
+            </div>
+            <div class="form-group">
+                <label for="bp">Base price</label>
+                <input type="text" id="bp" name="bp">
+            </div>
+            <div class="extra-services">
+                <h3>Extra services</h3>
+                <div>
+                    <input type="checkbox" name="opt" value="speed"> Gear shifter<br>
+                    <input type="checkbox" name="opt" value="gps"> GPS<br>
+                    <input type="checkbox" name="opt" value="mirror"> Mirror<br>
+                    <input type="checkbox" name="opt" value="pump"> Air pump<br>
+                    <input type="checkbox" name="opt" value="bottle"> Bottle support<br>
+                    <input type="checkbox" name="opt" value="horn"> Horn<br>
+                </div>
+            </div>
+            <br>
+            <input type="submit" value="Post" name="p" class="button">
+        </form>
+    </div>
+    <div class="form-container">
+        <h3 align="center">Your activity</h3>
+        <h3>Your bikes</h3>
+        <h3>Your clients</h3>
+    </div>
+</div>
+</body>
+</html>
+
+                       

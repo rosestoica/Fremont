@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bike Rental Hub</title>
+    <style>
+        body {
+            background: radial-gradient(circle, #05CDC4, #2D6685);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .profile {
+            width: 45%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            border-radius: 50%;
+            border: 5px solid white;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .profile h2 {
+            margin: 10px 0;
+        }
+        .profile h3 {
+            margin-bottom: 20px;
+        }
+        .profile form input[type="submit"] {
+            border: none;
+            background-color: #4267B2; /*Culoarea de fundal a butonului Facebook*/
+            font-size: 16px;
+            color: white;
+            width: 200px;
+            height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 5px;
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3); /*Adăugăm o umbră pentru efect tridimensional*/
+        }
+        .profile form input[type="submit"]:hover {
+            background-color: #2A4D8E; /*Culoarea de fundal a butonului Facebook la hover*/
+            box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3); /*Ajustăm umbra la hover pentru efect tridimensional*/
+        }
+        .bottom-form {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .bottom-form form input[type="submit"] {
+            border: none;
+            background-color: #4267B2; /*Culoarea de fundal a butonului Facebook*/
+            font-size: 16px;
+            color: white;
+            width: 250px;
+            height: 40px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 5px;
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3); /*Adăugăm o umbră pentru efect tridimensional*/
+        }
+        .bottom-form form input[type="submit"]:hover {
+            background-color: #2A4D8E; /*Culoarea de fundal a butonului Facebook la hover*/
+            box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.3); /*Ajustăm umbra la hover pentru efect tridimensional*/
+        }
+        .arrow-link {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            margin-top: 20px; /* Pentru a centra vertical elementul */
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<a href="file:///C:/Users/Lenovo/Documents/p0.html" class="arrow-link">&lt;</a> <!-- Adăugăm săgeata către stânga aici -->
+<h1 align="center">About Us</h1>
+<div class="container">
+    <div class="profile">
+        <img src="https://scontent.ftsr1-1.fna.fbcdn.net/v/t39.30808-6/421888326_1770294696783394_4057865812667535822_n.jpg?stp=dst-jpg_p480x480&_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=kT2bt8GVElEQ7kNvgGq3V0P&_nc_ht=scontent.ftsr1-1.fna&oh=00_AYCYrSiJbkzi8kz-IRjEaHX59_ZxzDFvHePWjkcB7Blm2w&oe=6657E892" alt="Stoica Rose - Marie">
+        <h2>Stoica Rose - Marie</h2>
+        <h3>Application Developer</h3>
+        <form action="" method="post">
+            <input type="submit" value="View More Details" name="View more details">
+        </form>
+    </div>
+    <div class="profile">
+        <img src="https://scontent.ftsr1-2.fna.fbcdn.net/v/t1.6435-1/103950461_717625159021983_4615367416723780296_n.jpg?stp=dst-jpg_p200x200&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=9pj8JvhWZVsQ7kNvgE8YGEK&_nc_ht=scontent.ftsr1-2.fna&oh=00_AYCLqQPZgg0hJLa0bkz6QHNxwUxdPX4aWACmJaToLDXHBA&oe=6679923E" alt="Oprea Deean - Augustin">
+        <h2>Oprea Deean - Augustin</h2>
+        <h3>Application Developer</h3>
+        <form action="" method="post">
+            <input type="submit" value="View More Details" name="View more details">
+        </form>
+    </div>
+</div>
+<div class="bottom-form">
+    <form action="" method="post">
+        <input type="submit" value="More About App's Structure" name="More about app's structure"> <br>
+        <input type="submit" value="Our Mission" name="Our mission"><br>
+    </form>
+</div>
+</body>
+</html>

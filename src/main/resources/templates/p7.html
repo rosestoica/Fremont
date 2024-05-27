@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bike Rental Hub</title>
+    <style>
+        body {
+            background: radial-gradient(circle, #05CDC4, #2D6685);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .form-container {
+            width: 45%;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid black;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .button {
+            border: 2px solid black;
+            background-color: #4267B2;
+            font-size: 20px;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-sizing: border-box;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/2048px-Magnifying_glass_icon.svg.png');
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px; /* Adjust padding to make space for the icon */
+        }
+        .choose-photo-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .choose-photo-button {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: blue;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            text-align: center;
+        }
+        .extra-services {
+            margin-top: 20px;
+        }
+        .extra-services input {
+            margin-right: 5px;
+        }
+        .arrow-link {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            margin-top: 20px; /* Pentru a centra vertical elementul */
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+        }
+        .photo {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            top: 0;
+            right: 20px;
+            margin-top: 20px; /* Pentru a centra vertical elementul */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+<a href="#" class="arrow-link">&lt;</a> <!-- Adăugăm săgeata către stânga aici -->
+<h1>Client <div class="photo"></div></h1> <!-- Adăugăm div-ul pentru fotografiă aici -->
+<div class="container">
+    <div class="form-container">
+        <h3 align="center">Search a bike!</h3>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country" onchange="displayPrefix()">
+                    <!-- Options for country -->
+                    <option value="355">Albania</option>
+                    <option value="376">Andorra</option>
+                    <option value="43">Austria</option>
+                    <option value="375">Belarus</option>
+                    <option value="32">Belgium</option>
+                    <option value="387">Bosnia and Herzegovina</option>
+                    <option value="359">Bulgaria</option>
+                    <option value="357">Cyprus</option>
+                    <option value="420">Czech Republic</option>
+                    <option value="45">Denmark</option>
+                    <option value="372">Estonia</option>
+                    <option value="358">Finland</option>
+                    <option value="33">France</option>
+                    <option value="49">Germany</option>
+                    <option value="30">Greece</option>
+                    <option value="36">Hungary</option>
+                    <option value="354">Iceland</option>
+                    <option value="353">Ireland</option>
+                    <option value="39">Italy</option>
+                    <option value="371">Latvia</option>
+                    <option value="423">Liechtenstein</option>
+                    <option value="370">Lithuania</option>
+                    <option value="352">Luxembourg</option>
+                    <option value="356">Malta</option>
+                    <option value="373">Moldova</option>
+                    <option value="377">Monaco</option>
+                    <option value="382">Montenegro</option>
+                    <option value="31">Netherlands</option>
+                    <option value="47">Norway</option>
+                    <option value="48">Poland</option>
+                    <option value="351">Portugal</option>
+                    <option value="40">Romania</option>
+                    <option value="7">Russia</option>
+                    <option value="378">San Marino</option>
+                    <option value="381">Serbia</option>
+                    <option value="421">Slovakia</option>
+                    <option value="386">Slovenia</option>
+                    <option value="34">Spain</option>
+                    <option value="46">Sweden</option>
+                    <option value="41">Switzerland</option>
+                    <option value="90">Turkey</option>
+                    <option value="380">Ukraine</option>
+                    <option value="44">UK</option>
+                    <option value="1">USA</option>
+                    <option value="39">Vatican</option>
+                </select>
+                <p id="prefix-display"></p>
+            </div>
+            <div class="form-group">
+                <label for="cityc">Enter the city</label>
+                <input type="text" id="cityc" name="cityc">
+            </div>
+            <div class="form-group">
+                <label for="markc">Enter the mark</label>
+                <input type="text" id="markc" name="markc">
+            </div>
+            <div class="extra-services">
+                <h3>Extra services</h3>
+                <div>
+                    <input type="checkbox" name="opt" value="speed"> Gear shifter<br>
+                    <input type="checkbox" name="opt" value="gps"> GPS<br>
+                    <input type="checkbox" name="opt" value="mirror"> Mirror<br>
+                    <input type="checkbox" name="opt" value="pump"> Air pump<br>
+                    <input type="checkbox" name="opt" value="bottle"> Bottle support<br>
+                    <input type="checkbox" name="opt" value="horn"> Horn<br>
+                </div>
+            </div>
+            <br>
+            <input type="submit" value="Search" name="s" class="button">
+        </form>
+    </div>
+    <div class="form-container">
+        <h3 align="center">Results</h3>
+    </div>
+</div>
+</body>
+</html>
