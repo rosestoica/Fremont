@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bike Rental Hub</title>
+    <style>
+        body {
+            background: radial-gradient(circle, #05CDC4, #2D6685);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .left-div {
+            width: 45%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .right-div {
+            width: 45%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .right-div img {
+            margin-right: -30px; /* Ajustează această valoare pentru a muta imaginea mai spre dreapta */
+            border-radius: 15px; /* Rotunjim colțurile imaginii */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Adăugăm o umbră pentru efect */
+        }
+        .button {
+            border: none; /* Eliminăm conturul butonului */
+            background-color: #4267B2; /* Schimbăm culoarea de fundal a butonului pentru a se potrivi cu Facebook-ul */
+            font-size: 20px;
+            color: white;
+            width: 250px;
+            height: 40px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 5px; /* Rotunjim colțurile butonului */
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3); /* Adăugăm o umbră pentru efect tridimensional */
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .form-group input {
+            width: calc(100% - 22px); /* Pentru a ține cont de padding și border */
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+	.arrow-link {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            margin-top: 20px; /* Pentru a centra vertical elementul */
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <a href="p0.html" class="arrow-link">&lt;</a> <!-- Adăugăm săgeata către stânga aici -->
+    <div class="container">
+        <div class="left-div">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/road-bike-tips-0539-preview-64d24716ef87b.jpg?crop=0.668xw:1.00xh;0.259xw,0&resize=640:*" 
+                 style="display: block; width: 100%; height: 100%; border-radius: 15px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
+        </div>
+        <div class="right-div">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-bike-rental-5984287-5039535.png" width="100px" height="100px">
+            <br><br><br>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="first">First name</label>
+                    <input type="text" id="first" name="first">
+                </div>
+                <div class="form-group">
+                    <label for="last">Last name</label>
+                    <input type="text" id="last" name="last">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+		</form>
+		<form action="p5.html" method="post">
+                <input type="submit" value="Next" name="next" class="button"><br>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
