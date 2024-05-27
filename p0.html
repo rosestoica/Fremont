@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bike Rental Hub</title>
+    <style>
+        body {
+            background: radial-gradient(circle, #05CDC4, #2D6685);
+            color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .left-div {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .left-div img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .right-div {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .right-div img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .button {
+            border: none;
+            background-color: #007bff;
+            font-size: 20px;
+            color: white;
+            width: 250px;
+            height: 50px;
+            margin-bottom: 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-div">
+            <img src="https://img.freepik.com/premium-photo/people-riding-bicycle-happy-bike-riders-ciclistas_923558-1856.jpg" 
+                 alt="Bike Rental" style="display: block; width: 100%; height: auto; border-radius: 15px;">
+        </div>
+        <div class="right-div">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-bike-rental-5984287-5039535.png" alt="Bike Rental Icon">
+            <h1>Welcome!</h1>
+            <form action="p2.html" method="post">
+                <input type="submit" value="Log in" name="Log in" class="button"><br>
+	    </form>
+	    <form action="p4.html" method="post">
+                <input type="submit" value="Create an account" name="Create an account" class="button"><br>
+	    </form>
+	    <form action="p1.html" method="post">
+                <input type="submit" value="About us" name="About us" class="button"><br>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
